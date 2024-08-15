@@ -1,4 +1,8 @@
+//Importo estilo
 import "./Header.css";
+//Importo iconos
+import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 
 const Header = (props) => {
   return (

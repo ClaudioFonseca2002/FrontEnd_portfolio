@@ -1,5 +1,11 @@
+import Home from "./views/home/Home.jsx";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <Home></Home>
+    </>
+  );
 }
 
 export default App;
