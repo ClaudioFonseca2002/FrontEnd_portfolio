@@ -3,6 +3,8 @@ import "./Header.css";
 //Importo iconos
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+//Importo Dependencias
+import { Link } from "react-router-dom";
 
 const Header = (props) => {
   return (
@@ -20,9 +22,11 @@ const Header = (props) => {
             <FaLinkedin size={32} />
           </a>
         </div>
-        <button type="button" className="btn btn-primary">
-          Ingresar
-        </button>
+        <Link to="/login">
+            <button type="button" className="btn btn-primary">
+              Ingresar
+            </button>
+          </Link>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
