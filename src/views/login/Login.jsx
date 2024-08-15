@@ -26,18 +26,15 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(""); // Limpiar errores anteriores
-
+  
     // Validar campos de entrada
     if (!username || !password) {
       setError("Por favor, ingresa tu nombre de usuario y contraseña.");
       return;
     }
-
-    const data = {
-      username,
-      password,
-    };
-
+  
+    const data = { username, password };
+  
     try {
       const response = await fetch(`${backendUrl}/login`, {
         method: "POST",
@@ -46,12 +43,13 @@ const Login = () => {
         },
         body: JSON.stringify(data),
       });
-
+  
       if (!response.ok) {
+        // Intentar obtener un mensaje de error del backend
         const errorData = await response.json();
         throw new Error(errorData.message || `Error: ${response.statusText}`);
       }
-
+  
       const result = await response.json();
       localStorage.setItem("token", result.token);
       navigate("/"); // Redirecciona a la vista "/"
