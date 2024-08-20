@@ -29,6 +29,16 @@ const Header = (props) => {
     };
   }, []);
 
+  //Función para cerrar sesion
+  function logOut() {
+    const confirmed = window.confirm(
+      "¿Estás seguro que quieres cerrar sesión?"
+    );
+    if (confirmed) {
+      localStorage.removeItem("token");
+    }
+  }
+
   return (
     <nav className="navbar navbar-dark bg-dark">
       <div className="container-fluid">
@@ -45,7 +55,7 @@ const Header = (props) => {
           </a>
         </div>
         {userIsLogged ? (
-          <button type="button" className="btn btn-danger">
+          <button type="button" className="btn btn-danger" onClick={logOut}>
             Salir
           </button>
         ) : (
