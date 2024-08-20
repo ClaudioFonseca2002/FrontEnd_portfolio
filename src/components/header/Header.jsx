@@ -45,7 +45,7 @@ const Header = (props) => {
           </a>
         </div>
         {userIsLogged ? (
-          <button type="button" className="btn btn-danger" onClick={logOut}>
+          <button type="button" className="btn btn-danger">
             Salir
           </button>
         ) : (
