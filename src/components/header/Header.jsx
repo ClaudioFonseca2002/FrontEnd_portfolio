@@ -5,8 +5,29 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 //Importo Dependencias
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Header = (props) => {
+  //Tomo el token si aún existe
+  const [userIsLogged, setUserIsLogged] = useState(
+    localStorage.getItem("token")
+  );
+
+  useEffect(() => {
+    const handleStorageChange = (event) => {
+      // Verifica si el cambio es relevante
+      if (event.key === "token") {
+        setUserIsLogged(localStorage.getItem("token"));
+      }
+    };
+
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("storage", handleStorageChange);
+    };
+  }, []);
+
   return (
     <nav className="navbar navbar-dark bg-dark">
       <div className="container-fluid">
@@ -22,11 +43,17 @@ const Header = (props) => {
             <FaLinkedin size={32} />
           </a>
         </div>
-        <Link to="/login">
+        {userIsLogged ? (
+          <button type="button" className="btn btn-danger" onClick={logOut}>
+            Salir
+          </button>
+        ) : (
+          <Link to="/login">
             <button type="button" className="btn btn-primary">
               Ingresar
             </button>
           </Link>
+        )}
         <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
