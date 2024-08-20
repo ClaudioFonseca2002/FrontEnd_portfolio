@@ -13,6 +13,8 @@ const Login = () => {
   const navigate = useNavigate();
 
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
+  const LOCAL_BACKEND = import.meta.env.VITE_LOCAL_BACKEND;
+ 
 
   //Manejo de campos
   const handleUsername = (e) => {

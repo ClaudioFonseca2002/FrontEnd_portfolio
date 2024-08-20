@@ -1,22 +1,14 @@
-//Importo estilo
 import "./Header.css";
-//Importo iconos
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
-//Importo Dependencias
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const Header = (props) => {
-  //Tomo el token si aún existe
-  const [userIsLogged, setUserIsLogged] = useState(
-    localStorage.getItem("token")
-  );
+  const [userIsLogged, setUserIsLogged] = useState(localStorage.getItem("token"));
 
   useEffect(() => {
     const handleStorageChange = (event) => {
-      // Verifica si el cambio es relevante
       if (event.key === "token") {
         setUserIsLogged(localStorage.getItem("token"));
       }
@@ -29,21 +21,24 @@ const Header = (props) => {
     };
   }, []);
 
-  //Función para cerrar sesion
-  function logOut() {
-    const confirmed = window.confirm(
-      "¿Estás seguro que quieres cerrar sesión?"
-    );
+  useEffect(() => {
+    //Actualiza el estado en caso de que el componente se monte
+    setUserIsLogged(localStorage.getItem("token"));
+  }, []);
+
+  const logOut = () => {
+    const confirmed = window.confirm("¿Estás seguro que quieres cerrar sesión?");
     if (confirmed) {
       localStorage.removeItem("token");
+      setUserIsLogged(null); // Actualiza el estado en la misma pestaña
     }
-  }
+  };
 
   return (
     <nav className="navbar navbar-dark bg-dark">
       <div className="container-fluid">
         <div className="social-icons">
-          <a href="https://github.com/ClaudioFonseca2002" target="_blank">
+          <a href="https://github.com/ClaudioFonseca2002" target="_blank" rel="noopener noreferrer">
             <FaGithub size={40} />
           </a>
           <a
