@@ -6,6 +6,7 @@ import { FaLinkedin } from "react-icons/fa";
 //Importo Dependencias
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
 
 const Header = (props) => {
   //Tomo el token si aún existe
