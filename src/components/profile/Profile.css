@@ -1,0 +1,108 @@
+.container_perfil {
+    justify-content: space-evenly;
+    border: 2px solid #ccc; /* Borde de 2px de grosor, sólido, color gris suave */
+    border-radius: 8px; /* Esquinas redondeadas */
+    padding: 20px; /* Espaciado interior para separar el contenido del borde */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .container_title {
+    display: flexbox;
+    justify-content: center;
+  }
+  .container_img_text {
+    display: flex;
+    flex-direction: row; /* Alinea la imagen y el texto en fila por defecto */
+    align-items: center; /* Centra verticalmente el contenido en el eje transversal */
+    gap: 20px; /* Espacio entre la imagen y el texto */
+    padding: 20px; /* Espacio interno para que el contenido no esté pegado al borde */
+    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
+  }
+  
+  /* Ajustes para pantallas más pequeñas */
+  @media (max-width: 768px) {
+    .container_img_text {
+      flex-direction: column; /* Cambia a columna en pantallas más pequeñas */
+      align-items: flex-start; /* Alinea el contenido al inicio del eje transversal */
+      gap: 10px; /* Reduce el espacio entre la imagen y el texto */
+    }
+  }
+  
+  /* Ajustes para pantallas muy pequeñas */
+  @media (max-width: 480px) {
+    .container_img_text {
+      padding: 10px; /* Reduce el padding para pantallas muy pequeñas */
+    }
+  }
+  
+  .description-container {
+    max-width: 100%; /* Ajusta el ancho máximo al 100% del contenedor padre */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    padding: 0 15px; /* Añade un poco de espacio en los laterales para que no esté pegado al borde */
+  }
+  
+  /* Ajustes específicos para pantallas más pequeñas */
+  @media (max-width: 768px) {
+    .description-container {
+      padding: 0 10px; /* Menos espacio en los laterales en pantallas más pequeñas */
+    }
+  }
+  
+  /* Ajustes para pantallas muy pequeñas (teléfonos móviles en orientación vertical) */
+  @media (max-width: 480px) {
+    .description-container {
+      padding: 0 5px; /* Aún menos espacio en los laterales en pantallas aún más pequeñas */
+    }
+  }
+  
+  .description-text {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: medium;
+    white-space: pre-wrap; /* Preserva espacios y saltos de línea */
+    word-wrap: break-word; /* Maneja palabras largas */
+  }
+  
+  .editButton {
+    margin: 20px;
+  }
+  
+  .styleTextArea {
+    width: 100%; /* Make the textarea full width */
+    min-height: 50px; /* Set a minimum height */
+    resize: vertical; /* Allow the user to resize vertically */
+  }
+  
+  button {
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+  
+  .img {
+    width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
+    height: auto; /* Mantiene la relación de aspecto de la imagen */
+    max-width: 300px; /* Ancho máximo para que no crezca más de 300px */
+  }
+  
+  .paragraph {
+    font-size: 16px; /* Tamaño de fuente base */
+    line-height: 1.5; /* Altura de línea base */
+    word-break: break-all;
+  }
+  
+  /* Media queries para hacer el párrafo responsive */
+  @media screen and (max-width: 600px) {
+    .paragraph {
+      font-size: 14px; /* Reducir tamaño de fuente en dispositivos más pequeños */
+    }
+  }
+  
+  @media screen and (max-width: 400px) {
+    .paragraph {
+      font-size: 12px; /* Reducir tamaño de fuente aún más en dispositivos más pequeños */
+    }
+  }
+  
