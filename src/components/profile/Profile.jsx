@@ -17,7 +17,7 @@ const Profile = () => {
   useEffect(() => {
     const fecthProfileDescription = async () => {
       try {
-        const res = await axios.get(`${backendUrl}/profile`);
+        const res = await axios.get(`${LOCAL_BACKEND}/profile`);
         setProfileDescription(res.data);
       } catch (err) {
         console.log(err);

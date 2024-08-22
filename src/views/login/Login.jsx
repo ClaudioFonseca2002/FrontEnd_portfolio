@@ -3,7 +3,9 @@ import styles from "./Login.module.css";
 //Importo dependencias
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useAuth } from '../../utils/AuthContext.jsx';
 import { useNavigate } from "react-router-dom";
+
 
 const Login = () => {
   //Estados
@@ -11,6 +13,7 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [error, setError] = useState(""); // Estado para manejar errores
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
   const LOCAL_BACKEND = import.meta.env.VITE_LOCAL_BACKEND;
@@ -38,7 +41,7 @@ const Login = () => {
     const data = { username, password };
   
     try {
-      const response = await fetch(`${backendUrl}/login`, {
+      const response = await fetch(`${LOCAL_BACKEND}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -54,6 +57,7 @@ const Login = () => {
   
       const result = await response.json();
       localStorage.setItem("token", result.token);
+      login();
       navigate("/"); // Redirecciona a la vista "/"
     } catch (error) {
       console.error("Error al autenticar:", error);

@@ -3,9 +3,13 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useAuth } from "../../utils/AuthContext.jsx";
 
 const Header = (props) => {
-  const [userIsLogged, setUserIsLogged] = useState(localStorage.getItem("token"));
+  const [userIsLogged, setUserIsLogged] = useState(
+    localStorage.getItem("token")
+  );
+  const { logout } = useAuth();
 
   useEffect(() => {
     const handleStorageChange = (event) => {
@@ -27,10 +31,13 @@ const Header = (props) => {
   }, []);
 
   const logOut = () => {
-    const confirmed = window.confirm("¿Estás seguro que quieres cerrar sesión?");
+    const confirmed = window.confirm(
+      "¿Estás seguro que quieres cerrar sesión?"
+    );
     if (confirmed) {
       localStorage.removeItem("token");
       setUserIsLogged(null); // Actualiza el estado en la misma pestaña
+      logout();
     }
   };
 
@@ -38,7 +45,11 @@ const Header = (props) => {
     <nav className="navbar navbar-dark bg-dark">
       <div className="container-fluid">
         <div className="social-icons">
-          <a href="https://github.com/ClaudioFonseca2002" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://github.com/ClaudioFonseca2002"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaGithub size={40} />
           </a>
           <a
