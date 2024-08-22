@@ -3,11 +3,15 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import roman from "../../img/roman.jpeg";
+import { useAuth } from '../../utils/AuthContext.jsx';
 
 const Profile = () => {
   //Estados
   const [profileDescription, setProfileDescription] = useState([]);
   const id_profile = 1;
+  
+  //contexto
+  const { isAuthenticated } = useAuth();
 
   //VariablesDeEntorno
   const backendUrl = import.meta.env.VITE_BACKEND_URL;
@@ -43,6 +47,13 @@ const Profile = () => {
               </li>
             ))}
           </ul>
+          {isAuthenticated && (
+            <Link to="/modifyProfile">
+              <button type="button" className="btn btn-warning editButton">
+                Editar
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </div>
