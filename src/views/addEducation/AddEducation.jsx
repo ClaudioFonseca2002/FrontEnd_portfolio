@@ -87,7 +87,7 @@ const AddEducation = () => {
     if (state === "finalizado") {
       try {
         axios.post(
-          `${backendUrl}/addCompletedEducation`,
+          `${LOCAL_BACKEND}/addCompletedEducation`,
           completedEducation,
           {
             headers: {
@@ -106,7 +106,7 @@ const AddEducation = () => {
     } else {
       try {
         axios.post(
-          `${backendUrl}/addInProcessEducation`,
+          `${LOCAL_BACKEND}/addInProcessEducation`,
           inProcessEducation,
           {
             headers: {
