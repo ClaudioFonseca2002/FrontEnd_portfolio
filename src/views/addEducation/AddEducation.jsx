@@ -96,12 +96,12 @@ const AddEducation = () => {
             },
           }
         );
-        alert("Datos enviados correctamente");
+        alert("Datos guardados correctamente");
         // Lógica adicional después de agregar el registro
         navigate("/");
       } catch (error) {
-        console.error("Error al enviar los datos:", error);
-        alert("Error al enviar los datos");
+        console.error("Error al guardar los datos:", error);
+        alert("Error al guardar los datos");
       }
     } else {
       try {
@@ -115,12 +115,12 @@ const AddEducation = () => {
             },
           }
         );
-        alert("Datos enviados correctamente");
+        alert("Datos guardados correctamente");
         // Lógica adicional después de agregar el registro
         navigate("/"); // Redirecciona a la vista "/home"
       } catch (error) {
-        console.error("Error al enviar los datos:", error);
-        alert("Error al enviar los datos");
+        console.error("Error al guardar los datos:", error);
+        alert("Error al guardar los datos");
       }
     }
   };
