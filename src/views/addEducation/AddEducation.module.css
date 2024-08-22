@@ -1,0 +1,118 @@
+.body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #b4b4b4cb;
+  }
+  
+  .add_container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 500px;
+  }
+  
+  .title {
+    margin-top: 0;
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btnSave {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #1f8024;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btnCancel {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #7e091c;
+    border: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btnGetInto:hover {
+    background-color: #0056b3;
+  }
+  
+  .btnBack:hover {
+    background-color: #b30000;
+  }
+  
+  /* Estilos para el campo de fecha */
+  input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    appearance: none;
+  }
+  
+  /* Estilos para el icono del calendario */
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    content: "\1F4C5"; /* Código Unicode para un icono de calendario */
+    color: #007bff; /* Color del icono */
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  /* Estilos para input radio */
+  input[type="radio"] {
+    margin-right: 15px;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 10px;
+    margin-top: 5px;
+  }
+  
+  .ratio-input {
+    display: flex;
+  }
+  
+  .ratio-input__field {
+    width: 50px;
+    margin: 0 5px;
+  }
+  
