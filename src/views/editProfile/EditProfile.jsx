@@ -48,7 +48,7 @@ const EditProfile = () => {
 
       try {
         await axios.put(
-          `http://${LOCAL_BACKEND}/modifyDescription/${id_profile}`,
+          `${LOCAL_BACKEND}/modifyDescription/${id_profile}`,
           { newDescription },
           {
             headers: {
