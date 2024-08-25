@@ -10,35 +10,39 @@ import { useAuth } from "../../utils/AuthContext.jsx";
 import { useEffect, useState } from "react";
 
 const Home = () => {
-
   const [token, setToken] = useState("");
 
   //Contexto
   const { logout } = useAuth();
 
   useEffect(() => {
-    return () => {
-      if (localStorage.getItem("token")) {
-        //Guardo el token en un estado
-        const storedToken = localStorage.getItem("token");
-        setToken(storedToken);
+    const verifyToken = () => {
+      const storedToken = localStorage.getItem("token");
+      if (storedToken) {
+        try {
+          // Decodificar el token para obtener la fecha de expiración
+          const decodedToken = jwtDecode(storedToken);
+          const expirationTime = decodedToken.exp * 1000; // Convertir a milisegundos
 
-        // Decodificar el token para obtener la fecha de expiración
-        const decodedToken = jwtDecode(storedToken);
-        const expirationTime = decodedToken.exp * 1000; // Convertir a milisegundos
-
-        // Calcular cuánto tiempo queda antes de que expire el token
-        const currentTime = new Date().getTime();
-        const timeUntilExpiration = (expirationTime - currentTime) / 1000;
-
-        if (currentTime > expirationTime) {
-          // El token ha expirado, eliminarlo del almacenamiento
+          // Calcular cuánto tiempo queda antes de que expire el token
+          const currentTime = new Date().getTime();
+          if (currentTime > expirationTime) {
+            // El token ha expirado, eliminarlo del almacenamiento
+            localStorage.removeItem("token");
+            logout();
+          }
+        } catch (error) {
+          console.error("Error decoding token:", error);
           localStorage.removeItem("token");
           logout();
-        } 
+        }
+      } else {
+        logout();
       }
     };
-  }, []); // Arreglo de dependencias vacío: se ejecuta solo una vez
+
+    verifyToken();
+  }, [logout]); 
 
   return (
     <>
