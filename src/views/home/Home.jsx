@@ -10,6 +10,9 @@ import { useAuth } from "../../utils/AuthContext.jsx";
 import { useEffect } from "react";
 
 const Home = () => {
+
+  const [token, setToken] = useState("");
+
   //Contexto
   const { logout } = useAuth();
 
@@ -32,12 +35,10 @@ const Home = () => {
           // El token ha expirado, eliminarlo del almacenamiento
           localStorage.removeItem("token");
           logout();
-        } else {
-          console.log("Token válido.");
-        }
+        } 
       }
     };
-  }, [userLogged]); // Arreglo de dependencias vacío: se ejecuta solo una vez
+  }, []); // Arreglo de dependencias vacío: se ejecuta solo una vez
 
   return (
     <>
