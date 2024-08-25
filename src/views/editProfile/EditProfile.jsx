@@ -23,7 +23,7 @@ const EditProfile = () => {
     //Tomo los datos
     const value = e.target.value;
     setNewDescription(value);
-    console.log("New description:", value);
+    //console.log("New description:", value);
 
     //Comparo longitud
     if (value.length > 1300) {
@@ -60,7 +60,7 @@ const EditProfile = () => {
         alert("Dato actualizado correctamente");
         navigate("/"); // Redirecciona a la vista "/home"
       } catch (error) {
-        console.error("Error al actualizar el dato:", error);
+        //console.error("Error al actualizar el dato:", error);
         alert("Error al actualizar el dato");
       }
       setError("");

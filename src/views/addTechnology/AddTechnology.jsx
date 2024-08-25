@@ -62,7 +62,7 @@ const AddTechnology = () => {
       alert("Se ha guardado técnologia correctamente");
       navigate("/");
     } catch (error) {
-      console.error("Error al guardar los datos:", error);
+      //console.error("Error al guardar los datos:", error);
       alert("Error al guardar los datos");
     }
   };

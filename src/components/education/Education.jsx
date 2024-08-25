@@ -26,7 +26,7 @@ const Education = () => {
         setCompletedEducations(response.data);
       })
       .catch((error) => {
-        console.error("Error al obtener los datos:", error);
+        //console.error("Error al obtener los datos:", error);
       });
   }, [completedEducations]);
 
@@ -38,7 +38,7 @@ const Education = () => {
         setEducationsInProcess(response.data);
       })
       .catch((error) => {
-        console.error("Error al obtener los datos:", error);
+        //console.error("Error al obtener los datos:", error);
       });
   }, []);
 
@@ -70,7 +70,7 @@ const Education = () => {
         );
         alert("Registro eliminado correctamente");
       } catch (error) {
-        console.error("Error al eliminar el registro:", error);
+        //console.error("Error al eliminar el registro:", error);
         alert("Error al eliminar el registro");
       }
     }
@@ -105,7 +105,7 @@ const Education = () => {
         );
         alert("Registro eliminado correctamente");
       } catch (error) {
-        console.error("Error al eliminar el registro:", error);
+        //console.error("Error al eliminar el registro:", error);
         alert("Error al eliminar el registro");
       }
     }

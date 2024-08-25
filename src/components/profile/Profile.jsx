@@ -24,7 +24,7 @@ const Profile = () => {
         const res = await axios.get(`${LOCAL_BACKEND}/profile`);
         setProfileDescription(res.data);
       } catch (err) {
-        console.log(err);
+        //console.log(err);
       }
     };
     fecthProfileDescription();

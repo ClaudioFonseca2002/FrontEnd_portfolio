@@ -23,7 +23,7 @@ const Technology = () => {
         setTechnology(response.data);
       })
       .catch((error) => {
-        console.error("Error al obtener los datos:", error);
+        //console.error("Error al obtener los datos:", error);
       });
   }, [technology]);
 
@@ -53,7 +53,7 @@ const Technology = () => {
         );
         alert("Tecnología eliminada correctamente");
       } catch (error) {
-        console.error("Error al eliminar el registro:", error);
+        //console.error("Error al eliminar el registro:", error);
         alert("Error al eliminar el registro");
       }
     }

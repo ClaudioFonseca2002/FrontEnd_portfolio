@@ -60,7 +60,7 @@ const Login = () => {
       login();
       navigate("/"); // Redirecciona a la vista "/"
     } catch (error) {
-      console.error("Error al autenticar:", error);
+      //console.error("Error al autenticar:", error);
       setError(error.message || "Error al autenticar. Inténtalo de nuevo.");
     }
   };

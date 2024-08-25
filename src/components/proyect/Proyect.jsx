@@ -22,7 +22,7 @@ const Proyect = () => {
         setProyects(response.data);
       })
       .catch((error) => {
-        console.error("Error al obtener los datos:", error);
+        //console.error("Error al obtener los datos:", error);
       });
   }, [proyects]);
 
@@ -52,7 +52,7 @@ const Proyect = () => {
         );
         alert("Proyecto eliminado correctamente");
       } catch (error) {
-        console.error("Error al eliminar el proyecto:", error);
+        //console.error("Error al eliminar el proyecto:", error);
         alert("Error al eliminar el proyecto");
       }
     }
