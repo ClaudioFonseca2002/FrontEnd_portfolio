@@ -79,12 +79,12 @@ const AddProyect = () => {
           "Content-Type": "application/json", // Asegúrate de que el tipo de contenido sea JSON
         },
       });
-      alert("Datos enviados correctamente");
+      alert("Proyecto guardado correctamente");
       // Lógica adicional después de agregar el registro
       navigate("/");
     } catch (error) {
-      console.error("Error al enviar los datos:", error);
-      alert("Error al enviar los datos");
+      console.error("Error al guardar los datos:", error);
+      alert("Error al guardar los datos");
     }
   };
 
