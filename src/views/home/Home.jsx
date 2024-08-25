@@ -7,6 +7,7 @@ import Education from "../../components/education/Education.jsx";
 import Technology from "../../components/technology/Technology.jsx";
 import Footer from "../../components/footer/Footer.jsx";
 import { useAuth } from "../../utils/AuthContext.jsx";
+import { useEffect } from "react";
 
 const Home = () => {
   //Contexto
