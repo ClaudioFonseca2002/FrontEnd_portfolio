@@ -17,7 +17,7 @@ const Proyect = () => {
   //Traer datos de proyectos
   useEffect(() => {
     axios
-      .get(`${LOCAL_BACKEND}/getProyects`)
+      .get(`${backendUrl}/getProyects`)
       .then((response) => {
         setProyects(response.data);
       })
@@ -38,7 +38,7 @@ const Proyect = () => {
 
       try {
         await axios.delete(
-          `${LOCAL_BACKEND}/deleteProyect/${id_proyecto}`,
+          `${backendUrl}/deleteProyect/${id_proyecto}`,
           {
             headers: {
               Authorization: `Bearer ${token}`, // Incluir el token en el encabezado Authorization

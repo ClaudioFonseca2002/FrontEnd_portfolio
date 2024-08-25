@@ -18,7 +18,7 @@ const Technology = () => {
   //Traer tecnologias
   useEffect(() => {
     axios
-      .get(`${LOCAL_BACKEND}/getTechnology`)
+      .get(`${backendUrl}/getTechnology`)
       .then((response) => {
         setTechnology(response.data);
       })
@@ -39,7 +39,7 @@ const Technology = () => {
 
       try {
         await axios.delete(
-          `${LOCAL_BACKEND}/deleteTechnology/${idTechnology}`,
+          `${backendUrl}/deleteTechnology/${idTechnology}`,
           {
             headers: {
               Authorization: `Bearer ${token}`, // Incluir el token en el encabezado Authorization

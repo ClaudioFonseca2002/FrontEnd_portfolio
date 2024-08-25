@@ -21,7 +21,7 @@ const Education = () => {
   //Traer datos de educación finalizada
   useEffect(() => {
     axios
-      .get(`${LOCAL_BACKEND}/getCompletedEducation`)
+      .get(`${backendUrl}/getCompletedEducation`)
       .then((response) => {
         setCompletedEducations(response.data);
       })
@@ -33,7 +33,7 @@ const Education = () => {
   //Traer datos de educación en proceso
   useEffect(() => {
     axios
-      .get(`${LOCAL_BACKEND}/getEducationInProcess`)
+      .get(`${backendUrl}/getEducationInProcess`)
       .then((response) => {
         setEducationsInProcess(response.data);
       })
@@ -54,7 +54,7 @@ const Education = () => {
 
       try {
         await axios.delete(
-          `${LOCAL_BACKEND}/deleteCompletedEducation/${id_education}`,
+          `${backendUrl}/deleteCompletedEducation/${id_education}`,
           {
             headers: {
               Authorization: `Bearer ${token}`, // Incluir el token en el encabezado Authorization
@@ -88,7 +88,7 @@ const Education = () => {
 
       try {
         await axios.delete(
-          `${LOCAL_BACKEND}/deleteEducationInProcess/${id_educacion_proceso}`,
+          `${backendUrl}/deleteEducationInProcess/${id_educacion_proceso}`,
           {
             headers: {
               Authorization: `Bearer ${token}`, // Incluir el token en el encabezado Authorization

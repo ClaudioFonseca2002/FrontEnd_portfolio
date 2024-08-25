@@ -41,7 +41,7 @@ const Login = () => {
     const data = { username, password };
   
     try {
-      const response = await fetch(`${LOCAL_BACKEND}/login`, {
+      const response = await fetch(`${backendUrl}/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -53,7 +53,7 @@ const AddTechnology = () => {
     const token = localStorage.getItem("token");
 
     try {
-      await axios.post(`${LOCAL_BACKEND}/addTechnology`, data, {
+      await axios.post(`${backendUrl}/addTechnology`, data, {
         headers: {
           Authorization: `Bearer ${token}`, // Incluir el token en el encabezado Authorization
           "Content-Type": "application/json", // Asegúrate de que el tipo de contenido sea JSON
